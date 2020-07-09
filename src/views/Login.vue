@@ -63,7 +63,7 @@
             if(this.datas.meta.status !== 200) return this.$message.error(this.datas.meta.msg)
             //则登录成功(用户存在)
             this.$message.success(this.datas.meta.msg)
-            //登录成功之后的token 保存到客户端的sessionStorage中
+            //登录成功之后把数据中的token 保存到客户端的sessionStorage中
             window.sessionStorage.setItem('token',this.datas.data.token)
             // 登录成功之后跳转页面
             this.$router.push('/hoem')
