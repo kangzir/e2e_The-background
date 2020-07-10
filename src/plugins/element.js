@@ -25,6 +25,8 @@ import {
   Dialog,
   MessageBox,
   Tooltip,
+  Tag,
+  Tree,
  } from 'element-ui'
 //全局注册提示框
 Vue.prototype.$message = Message
@@ -52,3 +54,5 @@ Vue.use(Switch)
 Vue.use(Pagination)
 Vue.use(Dialog)
 Vue.use(Tooltip)
+Vue.use(Tag)
+Vue.use(Tree)

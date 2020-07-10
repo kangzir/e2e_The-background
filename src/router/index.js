@@ -18,7 +18,9 @@ const Hoem = () =>import('../views/hoem/Hoem')
 
 const Welcome = () => import('../views/hoem/childHoem/Welcome')
 const Users = () =>import('../views/hoem/childHoem/users/Users')
-
+//权限
+const Roles = () =>import('../views/hoem/childHoem/quanxian/Roles')
+const Rights = () =>import('../views/hoem/childHoem/quanxian/Rights')
   const routes = [
       {
         path:'',
@@ -43,6 +45,14 @@ const Users = () =>import('../views/hoem/childHoem/users/Users')
           {
             path:'/users',
             component:Users
+          },
+          {
+            path:'/roles',
+            component:Roles
+          },
+          {
+            path:'/rights',
+            component:Rights
           }
         ]
       }

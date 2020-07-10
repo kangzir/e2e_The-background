@@ -34,8 +34,7 @@
               :index="'/'+chiitem.path" 
               v-for="(chiitem) in item.children" 
               :key="chiitem.id"
-              @click="ziClick('/'+chiitem.path)"
-            >
+              @click="ziClick('/'+chiitem.path)">
                <template slot="title">
                 <i class="el-icon-menu"></i>
                 <span>{{chiitem.authName}}</span>
