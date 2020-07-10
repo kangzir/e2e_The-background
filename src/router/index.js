@@ -63,7 +63,7 @@ router.beforeEach((to, from, next) => {
   // if(to.path === "/login") return next()
   // //获取当前的 token
   // const istoken = window.sessionStorage.getItem('token')
-  // //判断如果没有token就是为登录直接挑转到登录页面
+  // //判断如果没有token就是为登录直接挑转到登录页     面
   // if(!istoken){
   //   return next('/login')
   // }else{
