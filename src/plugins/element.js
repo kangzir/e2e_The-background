@@ -27,10 +27,22 @@ import {
   Tooltip,
   Tag,
   Tree,
+  Select,
+  Option,
+  Cascader,
+  Alert,
+  Tabs,
+  TabPane
  } from 'element-ui'
 //全局注册提示框
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm
+Vue.use(Tabs)
+Vue.use(TabPane)
+Vue.use(Alert)
+Vue.use(Cascader)
+Vue.use(Select)
+Vue.use(Option)
 Vue.use(Button)
 Vue.use(Form)
 Vue.use(FormItem)

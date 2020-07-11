@@ -39,7 +39,7 @@
             <el-button type="primary" icon="el-icon-edit" size="mini" @click="dialogForm(uses.row.id)"></el-button>
             <el-button type="danger" icon="el-icon-delete" size="mini" @click="deleteUser(uses.row.id)"></el-button>
             <el-tooltip class="item" effect="dark" content="分配角色" placement="top">
-              <el-button type="warning" icon="el-icon-setting" size="mini"></el-button>
+              <el-button @click="AssignRoles(uses.row)" type="warning" icon="el-icon-setting" size="mini"></el-button>
             </el-tooltip>
           </template>
         </el-table-column>
@@ -109,6 +109,31 @@
       <span slot="footer" class="dialog-footer">
         <el-button @click="ModifyForm = false">取 消</el-button>
         <el-button type="primary" @click="validModifyForm">确 定</el-button>
+      </span>
+    </el-dialog>
+    <!-- 分配角色 -->
+    <el-dialog
+      title="修改内容"
+      :visible.sync="AssignRolesVisible"
+      width="50%"
+      @close="AssignRolesClose">
+      <span>
+        <p>当前的用户：usersInfo{{usersInfo.username}}</p>
+        <p>当前的角色：{{usersInfo.role_name}}</p>
+        <p>
+          <el-select v-model="selectUser" placeholder="请选择活动区域">
+            <el-option
+              v-for="item in selectUsers"
+              :key="item.id"
+              :label="item.roleName"
+              :value="item.id">
+            </el-option>
+          </el-select>
+        </p>
+      </span>
+      <span slot="footer">
+        <el-button @click="AssignRolesVisible = false">取 消</el-button>
+        <el-button type="primary" @click="AssignRolesVisibleCK">确 定</el-button>
       </span>
     </el-dialog>
   </div>
@@ -189,7 +214,11 @@
             { required: true, message: '请输入手机柜', trigger: 'blur' },
             { validator : checkMobile, trigger: 'blur' }
           ],
-        }
+        },
+        usersInfo:{},
+        AssignRolesVisible:false,
+        selectUsers:[],
+        selectUser:''
       }
     },
     created () {
@@ -321,7 +350,34 @@
               message: '已取消删除'
             });          
           });
-      }
+      },
+      // 1.5.1. 请求角色列表
+      AssignRoles(user){
+        this.usersInfo = user
+        this.$http.get('roles').then( res =>{
+          this.selectUsers = res.data.data
+          console.log(this.selectUsers);
+        })
+        console.log(this.usersInfo);
+        this.AssignRolesVisible = true
+      },
+      // 提交 分配用户角色
+      AssignRolesVisibleCK (){
+        console.log(this.selectUser);
+        if(!this.selectUser) return
+        this.$http.put(`users/${this.usersInfo.id}/role`,{
+          rid:this.selectUser
+        }).then( res =>{
+          console.log(res);
+        this.AssignRolesVisible = false
+        this._getUsersList()
+        })
+      },
+      // 关闭时清空内容
+      AssignRolesClose(){
+        this.selectUsers =[],
+        this.selectUser = ''
+      },
     },
   }
 </script>

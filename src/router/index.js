@@ -21,6 +21,10 @@ const Users = () =>import('../views/hoem/childHoem/users/Users')
 //权限
 const Roles = () =>import('../views/hoem/childHoem/quanxian/Roles')
 const Rights = () =>import('../views/hoem/childHoem/quanxian/Rights')
+// 商品管理
+const Goods = () => import('../views/hoem/childHoem/shangping/Goods')
+const Params = () => import('../views/hoem/childHoem/shangping/Params')
+const Categories = () => import('../views/hoem/childHoem/shangping/Categories')
   const routes = [
       {
         path:'',
@@ -53,7 +57,19 @@ const Rights = () =>import('../views/hoem/childHoem/quanxian/Rights')
           {
             path:'/rights',
             component:Rights
-          }
+          },
+          {
+            path:'/goods',
+            component:Goods
+          },
+          {
+            path:'/params',
+            component:Params
+          },
+          {
+            path:'/categories',
+            component:Categories
+          },
         ]
       }
 ]
