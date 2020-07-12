@@ -7,7 +7,13 @@ import './plugins/element.js'
 import './assets/css/normalize.css'
 import './assets/css/base.css'
 import './assets/font/iconfont.css'
+// 数据树
 import tree from 'vue-table-with-tree-grid'
+// 文本编辑器
+import vueQuillEditor from 'vue-quill-editor'
+import 'quill/dist/quill.core.css' // import styles
+import 'quill/dist/quill.snow.css' // for snow theme
+import 'quill/dist/quill.bubble.css' // for bubble theme
 Vue.config.productionTip = false
 // 配置全局url
 axios.defaults.baseURL='http://timemeetyou.com:8889/api/private/v1'
@@ -35,8 +41,10 @@ Vue.filter('dataFormat', function(originVal) {
 
   return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
 })
-// 数据树
+// 数据树注册
 Vue.component('tree',tree)
+//文本编辑器注册
+Vue.use(vueQuillEditor)
 new Vue({
   router,
   store,

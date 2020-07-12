@@ -3,3 +3,6 @@ body,html,#app{
   margin: 0;
   padding: 0;
 }
+.ql-container{
+  min-height: 300px;
+  }

@@ -192,7 +192,7 @@
           console.log(res.data.data);
           if(this.activeName === 'many'){
              this.manyTabdata = res.data.data
-          }else{
+          }else if(this.activeName === 'only'){
              this.onlyTabdata = res.data.data
           }
         })
@@ -202,15 +202,18 @@
         // console.log(this.cartListKeys);
         if(this.cartListKeys.length !== 3){
           this.cartListKeys = []
+          this.manyTabdata = []
+          this.onlyTabdata = []
           return
         }else{
 
         }
         this._getMOlist()
       },
-
+      // Tab点击切换时候触发
       handleTabClick(){
-        this._getMOlist()
+        console.log(this.activeName);
+          this._getMOlist()
       },
       addClose(){
         this.$refs.addFormRef.resetFields()

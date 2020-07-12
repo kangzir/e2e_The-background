@@ -25,6 +25,7 @@ const Rights = () =>import('../views/hoem/childHoem/quanxian/Rights')
 const Goods = () => import('../views/hoem/childHoem/shangping/Goods')
 const Params = () => import('../views/hoem/childHoem/shangping/Params')
 const Categories = () => import('../views/hoem/childHoem/shangping/Categories')
+ const Adduser = () =>import('../views/hoem/childHoem/shangping/Adduser')
   const routes = [
       {
         path:'',
@@ -60,7 +61,9 @@ const Categories = () => import('../views/hoem/childHoem/shangping/Categories')
           },
           {
             path:'/goods',
-            component:Goods
+            component:Goods,
+            children:[
+            ]
           },
           {
             path:'/params',
@@ -70,6 +73,10 @@ const Categories = () => import('../views/hoem/childHoem/shangping/Categories')
             path:'/categories',
             component:Categories
           },
+          {
+            path:'/goods/adduser',
+            component:Adduser
+          }
         ]
       }
 ]

@@ -15,7 +15,7 @@
         </el-col>
       <!-- 按钮 -->
         <el-col :span="6">
-          <el-button type="primary">添加商品</el-button>
+          <el-button type="primary" @click="adduserCk">添加商品</el-button>
         </el-col>
       </el-row>
       <!-- 表单 -->
@@ -162,6 +162,10 @@
         message: '已取消删除'
         });
         });
+      },
+      //跳转到添加用户页面
+      adduserCk(){
+        this.$router.push('/goods/adduser')
       }
     },
   }
