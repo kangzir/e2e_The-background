@@ -38,10 +38,14 @@ import {
   Checkbox,
   CheckboxGroup,
   Upload,
+  Timeline,
+  TimelineItem,
  } from 'element-ui'
 //全局注册提示框
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm
+Vue.use(Timeline)
+Vue.use(TimelineItem)
 Vue.use(Upload)
 Vue.use(Checkbox)
 Vue.use(CheckboxGroup)

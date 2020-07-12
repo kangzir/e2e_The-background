@@ -26,6 +26,9 @@ const Goods = () => import('../views/hoem/childHoem/shangping/Goods')
 const Params = () => import('../views/hoem/childHoem/shangping/Params')
 const Categories = () => import('../views/hoem/childHoem/shangping/Categories')
  const Adduser = () =>import('../views/hoem/childHoem/shangping/Adduser')
+
+//  订单管理
+const Orders = () =>import('../views/hoem/childHoem/dingdan/Orders')
   const routes = [
       {
         path:'',
@@ -62,8 +65,6 @@ const Categories = () => import('../views/hoem/childHoem/shangping/Categories')
           {
             path:'/goods',
             component:Goods,
-            children:[
-            ]
           },
           {
             path:'/params',
@@ -76,6 +77,10 @@ const Categories = () => import('../views/hoem/childHoem/shangping/Categories')
           {
             path:'/goods/adduser',
             component:Adduser
+          },
+          {
+            path:'/orders',
+            component:Orders
           }
         ]
       }
