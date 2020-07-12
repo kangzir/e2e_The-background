@@ -29,6 +29,8 @@ const Categories = () => import('../views/hoem/childHoem/shangping/Categories')
 
 //  订单管理
 const Orders = () =>import('../views/hoem/childHoem/dingdan/Orders')
+
+const Reports = () =>import('../views/hoem/childHoem/shujv/Reports')
   const routes = [
       {
         path:'',
@@ -81,6 +83,10 @@ const Orders = () =>import('../views/hoem/childHoem/dingdan/Orders')
           {
             path:'/orders',
             component:Orders
+          },
+          {
+            path:'/reports',
+            component:Reports
           }
         ]
       }
