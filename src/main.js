@@ -1,19 +1,21 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import store from './store'
 import axios from 'axios'
 import './plugins/element.js'
+
 import './assets/css/normalize.css'
+
 import './assets/css/base.css'
+
 import './assets/font/iconfont.css'
 // 数据树
 import tree from 'vue-table-with-tree-grid'
 // 文本编辑器
 import vueQuillEditor from 'vue-quill-editor'
-import 'quill/dist/quill.core.css' // import styles
-import 'quill/dist/quill.snow.css' // for snow theme
-import 'quill/dist/quill.bubble.css' // for bubble theme
+// import 'quill/dist/quill.core.css' // import styles
+// import 'quill/dist/quill.snow.css' // for snow theme
+// import 'quill/dist/quill.bubble.css' // for bubble theme
 Vue.config.productionTip = false
 // 配置全局url
 axios.defaults.baseURL='http://timemeetyou.com:8889/api/private/v1'
@@ -47,6 +49,5 @@ Vue.component('tree',tree)
 Vue.use(vueQuillEditor)
 new Vue({
   router,
-  store,
   render: h => h(App)
 }).$mount('#app')

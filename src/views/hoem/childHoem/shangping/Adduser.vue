@@ -110,9 +110,9 @@ import _ from 'lodash'
         // 选择的表单内容
         addForm:{
           goods_name:'',
-          goods_price:0,
-          goods_weight:0,
-          goods_number:0,
+          goods_price:null,
+          goods_weight:null,
+          goods_number:null,
 
           //练级选中的
           goods_cat:[],
